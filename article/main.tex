@@ -28,87 +28,53 @@
 \maketitle
 
 \begin{abstract}
-La gestión del talento humano docente en universidades públicas constituye uno de los procesos administrativos más críticos y, a la vez, más rezagados en cuanto a digitalización. Este artículo propone un marco de optimización del ciclo de vida de la contratación y gestión administrativa del docente, comprendido desde el reclutamiento hasta la asignación de carga horaria. El estudio adopta un enfoque mixto (cualitativo y cuantitativo), de tipo de campo y de carácter explicativo, económico y ético. Se definen cinco indicadores clave de desempeño (KPI): Lead Time de Contratación, Tasa de Idoneidad del Perfil, Costo Administrativo por Contratación, Índice de Digitalización de Expedientes y Tasa de Rotación Temprana. La propuesta se fundamenta en el modelo TQM (ciclo PDCA), las Directrices de la OCDE sobre Gobernanza Pública, la norma ISO 9001:2015 y el marco normativo nacional de carrera docente, y articula cinco módulos de automatización sobre un ERP institucional: reclutamiento digital (ATS), flujos de aprobación digital, validación automática de credenciales, onboarding automatizado y dashboard de gestión en tiempo real.
+The rapid digital transformation of Higher Education Institutions (HEIs) necessitates structural modernization across human resource management, faculty staffing, and administrative workflows. This paper examines contemporary frameworks for academic talent management, evaluating the integration of automated solutions, competency frameworks, and media-driven technological platforms in modern university administration.
 \end{abstract}
 
+\begin{IEEEkeywords}
+Talent Management, Higher Education Institutions, Digitalization, Academic Workflows, Competency Evaluation.
+\end{IEEEkeywords}
 
 \section{Introducción}
 \label{sec:intro}
 
-La contratación del personal docente en instituciones de educación superior pública es un proceso de alto impacto institucional: de su oportunidad y calidad dependen la cobertura académica, la pertinencia de los perfiles contratados y la estabilidad del ambiente de aprendizaje. Sin embargo, en la práctica, este proceso suele estar fragmentado en etapas manuales y burocráticas ---detección de la vacante, convocatoria, recepción y filtrado de postulaciones, evaluación de méritos, aprobaciones administrativas, firma de contrato y alta en el sistema--- que prolongan los tiempos de respuesta y encarecen el costo administrativo del proceso.
 
-Este trabajo aborda el objeto de estudio definido como el ciclo de vida de la contratación y gestión administrativa del docente, desde el reclutamiento hasta la asignación de carga horaria. El problema se delimita en torno a tres preguntas: (1) ¿qué tan largo y costoso es hoy el proceso de contratación?, (2) ¿qué grado de idoneidad presentan los candidatos finalmente seleccionados?, y (3) ¿qué parte del proceso puede automatizarse sin vulnerar la legalidad vigente?
+The operational landscape of Higher Education Institutions (HEIs) is undergoing a profound structural transition driven by globalized academic competition and technological evolution. As universities expand their administrative and educational scope, the recruitment, integration, and retention of qualified academic personnel have emerged as vital strategic imperatives. Traditional administrative methodologies often fail to address the complexities of modern faculty allocation, necessitating dynamic systems capable of coordinating academic human resources effectively.
 
-El resto del documento se organiza de la siguiente manera: la \cref{sec:marco} presenta el marco teórico y normativo; la \cref{sec:metodologia} describe la metodología; la \cref{sec:automatizacion} desarrolla la propuesta de automatización; la \cref{sec:kpi} define los indicadores de desempeño; la \cref{sec:analisis} analiza el estudio desde las dimensiones económica, ética y explicativa; y la \cref{sec:conclusiones} concluye con limitaciones y trabajo futuro.
+Human Resource Management (HRM) within the higher education sector faces distinct challenges compared to corporate environments. The dual obligations of pedagogical excellence and high-impact research require university administration to establish comprehensive evaluation and onboarding mechanisms. Without structured frameworks, academic institutions suffer from inefficiencies in hiring, sub-optimal faculty placement, and high attrition rates, ultimately undermining institutional performance and reputation.
 
+Digitalization plays a pivotal role in overcoming these organizational bottlenecks. The implementation of modern digital platforms, Enterprise Resource Planning (ERP) systems, and automated Applicant Tracking Systems (ATS) enables seamless communication and administrative tracking across university faculties. Digitally integrated administrative environments facilitate the systematic evaluation of candidate competencies while lowering overall administrative overhead.
 
-\section{Marco Teórico y Normativo}
-\label{sec:marco}
+Furthermore, internationalization strategies have introduced new dimensions to faculty recruitment. Modern HEIs actively recruit global academic talent to boost research output and global ranking indices. However, attracting international faculty members requires robust institutional infrastructure, as the integration process is heavily mediated by the institution's overall level of administrative and operational digitization \cite{fan2025_8}.
 
-\subsection{Gestión de calidad total (TQM) y ciclo PDCA}
-\label{ssec:tqm}
+In parallel, the profiles and core competencies expected of university educators are shifting rapidly in response to the digital age. Pedagogical methodologies increasingly incorporate specialized digital tools and interactive media formats, requiring continuous professional development and training. Consequently, institutional evaluation models must adapt to assess both traditional academic competencies and digital literacy indicators \cite{ji2025_17}.
 
-El enfoque de TQM (\emph{Total Quality Management}) se aplica mediante el ciclo PDCA (\emph{Plan--Do--Check--Act}) \cite{deming1986} sobre los procesos de selección docente. En la fase \emph{Plan} se documentan los procedimientos actuales de contratación y se definen los estándares de tiempo y costo; en la fase \emph{Do} se implementan los módulos automatizados descritos en \cref{sec:automatizacion}; en la fase \emph{Check} se miden los KPI definidos en \cref{sec:kpi}; y en la fase \emph{Act} se eliminan las redundancias burocráticas detectadas y se actualiza el procedimiento. Esta lógica de mejora continua permite tratar la contratación como un proceso repetible y auditable, y no como un conjunto de excepciones.
+Continuous professional training and the deployment of media education technologies are critical for preparing educators to navigate complex learning environments \cite{gorbatkova2023_15}. Integrating modern technological tools into faculty development programs enhances pedagogical effectiveness and aligns academic output with modern industry standards and societal demands.
 
-\subsection{Directrices de la OCDE sobre gobernanza pública}
-\label{ssec:ocde}
+Despite these technological advancements, many HEIs struggle to operationalize holistic talent management frameworks that seamlessly integrate recruitment, retention, and performance evaluation. Developing structured, sector-specific frameworks is essential to align administrative HR processes with broader institutional goals and quality assurance metrics \cite{musakuro2022_71}.
 
-Las Directrices de la OCDE sobre Gobernanza Pública \cite{ocde2017} aportan tres principios directamente aplicables al acceso al empleo público docente: transparencia (publicación de convocatorias, criterios y resultados), rendición de cuentas (trazabilidad de cada aprobación y firma en el flujo de trabajo) y meritocracia (ordenación de postulantes por méritos verificables y no por criterios discrecionales). La automatización propuesta no sustituye estos principios, sino que los instrumenta: cada decisión queda registrada, con marca temporal, en el expediente digital.
+This review provides a comprehensive analysis of contemporary approaches to academic talent management. By analyzing the intersection of institutional digitization, competency frameworks, media technologies, and talent management architectures, this study outlines actionable insights for optimizing HR workflows in modern higher education environments.
 
-\subsection{ISO 9001:2015}
-\label{ssec:iso}
+\section{Background}
 
-La norma ISO 9001:2015 \cite{iso9001} exige que los procesos estén definidos, controlados y medidos. Su aplicación a la contratación docente implica: (i) la estandarización del procedimiento de selección en un flujo único, con entradas y salidas verificables; (ii) el control de documentos del expediente del candidato; y (iii) indicadores de resultado consistentes y comparables entre convocatorias, lo que habilita la mejora continua exigida por el TQM.
+To properly contextualize the application of digital platforms and quality management in higher education HR workflows, several fundamental concepts and theoretical frameworks must be established. This section outlines the core principles governing talent management, digital maturity in academia, and competency evaluation.
 
-\subsection{Marco normativo nacional}
-\label{ssec:normativa}
+\subsection{Talent Management Architectures in HEIs}
+Talent management in higher education encompasses the strategic acquisition, development, and retention of academic and administrative staff. Unlike corporate HR models, university talent architectures must account for tenure systems, academic freedom, research productivity, and teaching effectiveness. Structured frameworks provide operational roadmaps for talent identification, succession planning, and performance management, ensuring institutional continuity and competitive standing \cite{musakuro2022_71}.
 
-Todo esquema de automatización debe subordinarse a las leyes de carrera pública docente y a los reglamentos internos de la universidad \cite{normativa}. El diseño propuesto respeta explícitamente las competencias que la normativa reserva a órganos colegiados y a la autoridad competente (por ejemplo, la decisión final de contratación), limitando la automatización a las tareas administrativas, de verificación y de notificación, de modo que no vulnere la legalidad vigente.
+\subsection{Institutional Digitization and Academic Integration}
+Institutional digitization refers to the extent to which an organization integrates digital technologies across its core operational, communication, and management workflows. In HEIs, high digitization levels streamline administrative procedures, facilitate cross-border faculty collaboration, and reduce friction during international faculty integration \cite{fan2025_8}. Systems such as automated workflows, digital signature verification, and centralized databases form the backbone of modern academic infrastructure.
 
-\subsection{Estándares de interoperabilidad}
-\label{ssec:interoperabilidad}
+\begin{figure}[htbp]
+\centering
+% Replace example-image with your actual image file path
+\includegraphics[width=0.85\linewidth]{example-image}
+\caption{Conceptual Architecture of Digitalized Talent Management and Quality Assurance in Higher Education Institutions.}
+\label{fig:background_arch}
+\end{figure}
 
-El módulo de gestión de personas (RRHH) del ERP debe comunicarse con el módulo presupuestario (disponibilidad de partida para la vacante) y con el módulo académico (asignación de carga horaria, grupos y aulas). Se definen protocolos de intercambio de datos con validación de esquemas, de manera que una vacante solo pueda formalizarse cuando exista presupuesto asignado y, una vez firmado el contrato, la carga horaria se publique automáticamente en el sistema académico.
-
-
-\section{Metodología}
-\label{sec:metodologia}
-
-El estudio adopta un enfoque mixto (cualitativo + cuantitativo), de tipo de campo y de carácter explicativo, económico y ético:
-
-\subsubsection{Enfoque cualitativo}
-Observación directa y entrevistas semiestructuradas con actores del proceso (decaturas, oficinas de recursos humanos, presupuesto y registro académico) para mapear el flujo actual, identificar cuellos de botella y validar la viabilidad normativa de cada automatización.
-
-\subsubsection{Enfoque cuantitativo}
-Medición de línea base de los cinco KPI definidos en \cref{sec:kpi} sobre un conjunto histórico de procesos de contratación, y proyección del efecto esperado de cada módulo de automatización sobre cada indicador.
-
-\subsubsection{Enfoques económico, ético y de campo}
-El análisis económico compara el costo administrativo del proceso manual contra el automatizado (\cref{sec:analisis}); la revisión ética cubre la protección de datos personales de los candidatos y la equidad del filtrado automático; y la medición se realiza en la propia institución, sobre procesos reales de contratación, no sobre simulaciones.
-
-
-\section{Propuesta: Automatización de Contrataciones}
-\label{sec:automatizacion}
-
-\subsection{Módulo de reclutamiento digital (ATS)}
-
-Se implementa un sistema de seguimiento de candidatos (ATS, \emph{Applicant Tracking System}) en el que la postulación, la carga de documentos y el filtrado inicial de currículums se realizan automáticamente mediante palabras clave asociadas al perfil de la vacante (formación académica, experiencia, líneas de investigación). El ATS reduce el trabajo manual de preselección y garantiza que ningún expediente quede fuera del proceso por errores administrativos.
-
-\subsection{Flujo de aprobaciones (workflows)}
-
-La firma física se sustituye por firmas digitales y flujos de trabajo automatizados. La solicitud de vacante recorre instantáneamente la ruta Decano $\rightarrow$ Recursos Humanos $\rightarrow$ Presupuesto, con validación de disponibilidad presupuestaria en línea. Cada nodo del flujo queda registrado con identidad, marca temporal y dictamen, lo que materializa el principio de rendición de cuentas y reduce el Lead Time de Contratación.
-
-\subsection{Validación automática de credenciales}
-
-El sistema se integra con bases de datos oficiales (ministerios de educación, registros nacionales de títulos) para verificar la veracidad de los grados académicos y la documentación habilitante del postulante, sin intervención manual. Esto eleva la Tasa de Idoneidad del Perfil y reduce el riesgo de contrataciones sobre documentación apócrifa.
-
-\subsection{Onboarding automatizado}
-
-Una vez firmado el contrato en el ERP, se generan automáticamente: la cuenta de correo institucional, los accesos a las plataformas académicas y la asignación de la carga horaria. El docente queda operativo el mismo día del alta, lo que mejora la inducción y ataca la Tasa de Rotación Temprana.
-
-\subsection{Dashboard de gestión en tiempo real}
-
-Un panel de control para la alta dirección muestra el estado de las vacantes y el avance de cada contratación en tiempo real (etapa actual, responsable, días transcurridos, alertas de retraso). El dashboard convierte los KPI en información accionable y sustenta la fase \emph{Check} del PDCA.
-
+\subsection{Competency Frameworks and Media Literacy}
+The transition toward digitalized learning environments demands clear competency indicators for academic staff. Competency models in the digital age evaluate pedagogical skills alongside technological adaptability and data literacy \cite{ji2025_17}. Furthermore, integrating media education technologies into continuous professional training enables educators to utilize advanced digital communication tools effectively \cite{gorbatkova2023_15}.
 
 \section{Indicadores Clave de Desempeño (KPI)}
 \label{sec:kpi}
@@ -138,53 +104,8 @@ La optimización se evalúa sobre cinco indicadores, definidos antes de la imple
 
 K1 (Lead Time de Contratación) es el indicador agregado del proceso completo. K2 (Tasa de Idoneidad del Perfil) se calcula sobre el total de contratos formalizados por convocatoria. K3 (Costo Administrativo por Contratación) permite comparar el proceso manual contra el automatizado y justificar económicamente la inversión. K4 (Índice de Digitalización de Expedientes) mide el avance real de la transformación. K5 (Tasa de Rotación Temprana) es un indicador de resultado tardío pero crítico: conecta la calidad del proceso de contratación con la continuidad del servicio académico.
 
+\bibliographystyle{IEEEtran}
+\bibliography{../assets/bibliography/REFERENCES_ALPHA}
 
-\section{Análisis: Dimensión Económica, Ética y Explicativa}
-\label{sec:analisis}
-
-\subsection{Dimensión económica}
-
-El principal ahorro proviene de tres fuentes: (i) la reducción del Lead Time de Contratación, que disminuye el costo de oportunidad de vacantes cubiertas con personal interino o sobrecarga del personal existente; (ii) la reducción del costo administrativo por contratación al eliminar tareas repetitivas de transcripción, traslado físico de expedientes y re-trabajos por documentación incompleta; y (iii) la prevención del costo de la contratación inadecuada (rotación temprana, re-convocatorias). El costo de implementación del módulo RRHH del ERP debe compararse contra estas disminuciones sostenidas en el tiempo.
-
-\subsection{Dimensión ética}
-
-La automatización de la preselección mediante palabras clave introduce el riesgo de sesgo algorítmico: si los criterios de filtrado heredan preferencias históricas, pueden excluir perfiles válidos. Mitigaciones propuestas: auditorías periódicas de los filtros, criterios de filtrado publicados con la convocatoria (transparencia), revisión humana obligatoria de los descartes automáticos y trazabilidad completa de cada decisión, en línea con los principios de la OCDE \cite{ocde2017}. Asimismo, el tratamiento de datos personales de los postulantes debe cumplir la normativa de protección de datos aplicable, con minimización de datos y plazos de conservación definidos.
-
-\subsection{Dimensión explicativa}
-
-El marco propuesto es explicativo en tanto articula causa y efecto: los módulos de automatización (\cref{sec:automatizacion}) explican la mejora esperada en cada KPI (\cref{sec:kpi}) --- por ejemplo, el workflow de aprobaciones explica la reducción del Lead Time (K1); la validación de credenciales explica la mejora de la idoneidad (K2); y el onboarding automatizado explica la reducción de la rotación temprana (K5). Esta correspondencia módulo--KPI hace el modelo refutable y medible.
-
-\subsection{Lectura cualitativa y cuantitativa combinada}
-
-Las mediciones cuantitativas (línea base y seguimiento de K1--K5) se interpretan junto con el material cualitativo (percepciones de los actores, resistencias organizativas, aprendizajes del despliegue), lo que permite explicar no solo cuánto mejora el proceso, sino por qué y bajo qué condiciones.
-
-
-\section{Conclusiones y Trabajo Futuro}
-\label{sec:conclusiones}
-
-Se propuso un marco de optimización del ciclo de vida de la contratación docente en universidades públicas, articulando estándares de gestión (TQM/PDCA, ISO 9001:2015), principios de gobernanza pública (OCDE), el marco normativo nacional y cinco módulos de automatización sobre el ERP institucional (ATS, workflows de aprobación, validación de credenciales, onboarding y dashboard). El diseño queda expresado en cinco KPI verificables que permiten la mejora continua y la rendición de cuentas.
-
-Como trabajo futuro se plantea: (i) la medición experimental de la línea base y del post-implementación de los cinco KPI en la institución; (ii) el refinamiento de los protocolos de interoperabilidad entre RRHH, presupuesto y módulo académico; y (iii) una auditoría ética del ATS centrada en sesgos de filtrado automático.
-
-
-\begin{acknowledgments}
-Los autores agradecen a las oficinas de gestión de personas, planificación presupuestaria y registro académico por el acceso a la información institucional y las entrevistas realizadas.
-\end{acknowledgments}
-
-\begin{thebibliography}{5}
-
-\bibitem{iso9001}
-{ISO}, \emph{ISO 9001:2015 --- Sistemas de gestión de la calidad: Requisitos}.\hskip 1em plus 0.5em minus 0.4em\relax Ginebra: Organización Internacional de Normalización, 2015.
-
-\bibitem{ocde2017}
-Organización para la Cooperación y el Desarrollo Económicos (OCDE), \emph{Recomendación del Consejo de la OCDE sobre Gobernanza Pública}.\hskip 1em plus 0.5em minus 0.4em\relax París: OECD Publishing, 2017.
-
-\bibitem{deming1986}
-W.~E. Deming, \emph{Out of the Crisis}.\hskip 1em plus 0.5em minus 0.4em\relax Cambridge, MA: MIT Press, 1986.
-
-\bibitem{normativa}
-Marco normativo nacional: leyes de carrera docente pública y reglamento interno de gestión de la universidad. [Documentos institucionales].
-
-\end{thebibliography}
 
 \end{document}
