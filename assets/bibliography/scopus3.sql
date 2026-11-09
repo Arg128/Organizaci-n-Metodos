@@ -1,3 +1,5 @@
+-- EXACTO CON 15 ARTICULOS 
+
 TITLE-ABS-KEY(
   ("contratación docente" OR "contratación de docentes" OR "selección docente" OR "reclutamiento docente" OR "faculty recruitment" OR "teacher recruitment" OR "academic recruitment" OR "faculty hiring" OR "teacher selection" OR "academic staff recruitment" OR "faculty selection")
   AND
