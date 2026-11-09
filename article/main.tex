@@ -9,7 +9,6 @@
 \usepackage{textcomp}
 \usepackage{xcolor}
 \usepackage{url}
-\usepackage[final]{neurips_2019}.
 
 % \documentclass[cameraready]{ieeeconf}
 
@@ -19,19 +18,22 @@
 \usepackage{booktabs}
 \usepackage[capitalize,nameinlink]{cleveref}
 \crefname{equation}{}{}
-\Crefname{equation}{Equation}{Equations}
+\Crefname{equation}{Ecuación}{Ecuaciones}
 
 \newcommand{\RR}{\mathbb{R}}
 
 \title{Optimización del Proceso de Gestión de Talento Humano Docente: Automatización del Ciclo de Vida de Contratación en Universidades Públicas}
 
-\addauthor{Author A}{1}
-\addauthor{Author B}{1,2}
-\addauthor{Author C}{3}
 
-\addaffiliation{1}{Affiliation 1, Address of Affiliation 1}
-\addaffiliation{2}{Affiliation 2, Address of Affiliation 2}
-\addaffiliation{3}{Affiliation 3, Address of Affiliation 3}
+\author{
+    \IEEEauthorblockN{
+        Anthony Moises Condori Choccata\IEEEauthorrefmark{1},\\
+        Angel Julio Retamozo Calatayud\IEEEauthorrefmark{1},\\
+        Daniel Adriano Gonzales Trelles\IEEEauthorrefmark{1} \\
+        Randal Steve Mejia Chuctaya\IEEEauthorrefmark{1}\\
+    }
+    \IEEEauthorblockA{\IEEEauthorrefmark{1}Universidad Nacional de San Agustín de Arequipa, Arequipa, Perú}
+}
 
 \begin{document}
 
@@ -42,49 +44,48 @@ The rapid digital transformation of Higher Education Institutions (HEIs) necessi
 \end{abstract}
 
 \begin{IEEEkeywords}
-Talent Management, Higher Education Institutions, Digitalization, Academic Workflows, Competency Evaluation.
+Gestión del Talento, Instituciones de Educación Superior, Digitalización, Flujos de Trabajo Académicos, Evaluación de Competencias.
 \end{IEEEkeywords}
 
 \section{Introducción}
 \label{sec:intro}
 
+El panorama operativo de las Instituciones de Educación Superior (IES) está experimentando una profunda transición estructural impulsada por la competencia académica globalizada y la evolución tecnológica. A medida que las universidades expanden su alcance administrativo y educativo, la contratación, integración y retención de personal académico cualificado se han convertido en imperativos estratégicos vitales. Las metodologías administrativas tradicionales a menudo no logran abordar las complejidades de la asignación docente moderna, lo que requiere sistemas dinámicos capaces de coordinar eficazmente los recursos humanos académicos.
 
-The operational landscape of Higher Education Institutions (HEIs) is undergoing a profound structural transition driven by globalized academic competition and technological evolution. As universities expand their administrative and educational scope, the recruitment, integration, and retention of qualified academic personnel have emerged as vital strategic imperatives. Traditional administrative methodologies often fail to address the complexities of modern faculty allocation, necessitating dynamic systems capable of coordinating academic human resources effectively.
+La Gestión de Recursos Humanos (GRH) en el sector de la educación superior enfrenta desafíos específicos en comparación con los entornos corporativos. Las dobles obligaciones de excelencia pedagógica e investigación de alto impacto exigen que la administración universitaria establezca mecanismos integrales de evaluación e incorporación (*onboarding*). Sin marcos estructurados, las instituciones académicas sufren ineficiencias en la contratación, asignación docente subóptima y altas tasas de rotación, lo que en última instancia perjudica el rendimiento y la reputación institucional.
 
-Human Resource Management (HRM) within the higher education sector faces distinct challenges compared to corporate environments. The dual obligations of pedagogical excellence and high-impact research require university administration to establish comprehensive evaluation and onboarding mechanisms. Without structured frameworks, academic institutions suffer from inefficiencies in hiring, sub-optimal faculty placement, and high attrition rates, ultimately undermining institutional performance and reputation.
+La digitalización desempeña un papel fundamental para superar estos cuellos de botella organizacionales. La implementación de plataformas digitales modernas, sistemas de Planificación de Recursos Empresariales (ERP) y Sistemas de Seguimiento de Candidatos (ATS) automatizados permite una comunicación fluida y un seguimiento administrativo eficiente entre las facultades universitarias. Los entornos administrativos integrados digitalmente facilitan la evaluación sistemática de las competencias de los candidatos al tiempo que reducen la carga administrativa general.
 
-Digitalization plays a pivotal role in overcoming these organizational bottlenecks. The implementation of modern digital platforms, Enterprise Resource Planning (ERP) systems, and automated Applicant Tracking Systems (ATS) enables seamless communication and administrative tracking across university faculties. Digitally integrated administrative environments facilitate the systematic evaluation of candidate competencies while lowering overall administrative overhead.
+Asimismo, las estrategias de internacionalización han introducido nuevas dimensiones en la contratación docente. Las IES modernas reclutan activamente talento académico global para impulsar la producción científica y elevar su posición en los índices de clasificación internacional. Sin embargo, atraer miembros del profesorado internacional requiere una infraestructura institucional sólida, ya que el proceso de integración está fuertemente mediatizado por el nivel general de digitalización operativa y administrativa de la institución \cite{fan2025_8}.
 
-Furthermore, internationalization strategies have introduced new dimensions to faculty recruitment. Modern HEIs actively recruit global academic talent to boost research output and global ranking indices. However, attracting international faculty members requires robust institutional infrastructure, as the integration process is heavily mediated by the institution's overall level of administrative and operational digitization \cite{fan2025_8}.
+En paralelo, los perfiles y las competencias clave que se esperan de los educadores universitarios están cambiando rápidamente en respuesta a la era digital. Las metodologías pedagógicas incorporan cada vez más herramientas digitales especializadas y formatos de medios interactivos, lo que requiere capacitación y desarrollo profesional continuo. Por consiguiente, los modelos de evaluación institucional deben adaptarse para valorar tanto las competencias académicas tradicionales como los indicadores de alfabetización digital \cite{ji2025_17}.
 
-In parallel, the profiles and core competencies expected of university educators are shifting rapidly in response to the digital age. Pedagogical methodologies increasingly incorporate specialized digital tools and interactive media formats, requiring continuous professional development and training. Consequently, institutional evaluation models must adapt to assess both traditional academic competencies and digital literacy indicators \cite{ji2025_17}.
+La formación profesional continua y el despliegue de tecnologías educativas basadas en medios son críticos para preparar a los educadores en la navegación de entornos de aprendizaje complejos \cite{gorbatkova2023_15}. La integración de herramientas tecnológicas modernas en los programas de desarrollo docente mejora la efectividad pedagógica y alinea los resultados académicos con los estándares industriales y las demandas sociales actuales.
 
-Continuous professional training and the deployment of media education technologies are critical for preparing educators to navigate complex learning environments \cite{gorbatkova2023_15}. Integrating modern technological tools into faculty development programs enhances pedagogical effectiveness and aligns academic output with modern industry standards and societal demands.
+A pesar de estos avances tecnológicos, muchas IES luchan por poner en marcha marcos holísticos de gestión del talento que integren sin problemas la contratación, la retención y la evaluación del desempeño. El desarrollo de marcos estructurados y específicos para el sector es esencial para alinear los procesos administrativos de RR. HH. con los objetivos institucionales globales y las métricas de garantía de calidad \cite{musakuro2022_71}.
 
-Despite these technological advancements, many HEIs struggle to operationalize holistic talent management frameworks that seamlessly integrate recruitment, retention, and performance evaluation. Developing structured, sector-specific frameworks is essential to align administrative HR processes with broader institutional goals and quality assurance metrics \cite{musakuro2022_71}.
+Esta revisión proporciona un análisis exhaustivo de los enfoques contemporáneos en la gestión del talento académico. Al analizar la intersección entre digitalización institucional, marcos de competencias, tecnologías mediáticas y arquitecturas de gestión del talento, este estudio delinea pautas de acción prácticas para optimizar los flujos de trabajo de RR. HH. en entornos modernos de educación superior.
 
-This review provides a comprehensive analysis of contemporary approaches to academic talent management. By analyzing the intersection of institutional digitization, competency frameworks, media technologies, and talent management architectures, this study outlines actionable insights for optimizing HR workflows in modern higher education environments.
+\section{Antecedentes}
 
-\section{Background}
+Para contextualizar adecuadamente la aplicación de plataformas digitales y la gestión de la calidad en los flujos de trabajo de RR. HH. en la educación superior, es necesario establecer varios conceptos fundamentales y marcos teóricos. Esta sección describe los principios centrales que rigen la gestión del talento, la madurez digital en el ámbito académico y la evaluación de competencias.
 
-To properly contextualize the application of digital platforms and quality management in higher education HR workflows, several fundamental concepts and theoretical frameworks must be established. This section outlines the core principles governing talent management, digital maturity in academia, and competency evaluation.
+\subsection{Arquitecturas de Gestión del Talento en las IES}
+La gestión del talento en la educación superior abarca la adquisición, el desarrollo y la retención estratégica del personal académico y administrativo. A diferencia de los modelos corporativos de RR. HH., las arquitecturas de talento universitario deben considerar los sistemas de titularidad (*tenure*), la libertad académica, la productividad científica y la efectividad docente. Los marcos estructurados proporcionan hojas de ruta operativas para la identificación del talento, la planificación de la sucesión y la gestión del rendimiento, asegurando la continuidad institucional y la competitividad \cite{musakuro2022_71}.
 
-\subsection{Talent Management Architectures in HEIs}
-Talent management in higher education encompasses the strategic acquisition, development, and retention of academic and administrative staff. Unlike corporate HR models, university talent architectures must account for tenure systems, academic freedom, research productivity, and teaching effectiveness. Structured frameworks provide operational roadmaps for talent identification, succession planning, and performance management, ensuring institutional continuity and competitive standing \cite{musakuro2022_71}.
-
-\subsection{Institutional Digitization and Academic Integration}
-Institutional digitization refers to the extent to which an organization integrates digital technologies across its core operational, communication, and management workflows. In HEIs, high digitization levels streamline administrative procedures, facilitate cross-border faculty collaboration, and reduce friction during international faculty integration \cite{fan2025_8}. Systems such as automated workflows, digital signature verification, and centralized databases form the backbone of modern academic infrastructure.
+\subsection{Digitalización Institucional e Integración Académica}
+La digitalización institucional se refiere al grado en que una organización integra las tecnologías digitales en sus flujos operativos, de comunicación y de gestión principales. En las IES, un alto nivel de digitalización agiliza los procedimientos administrativos, facilita la colaboración docente transfronteriza y reduce la fricción durante la integración del profesorado internacional \cite{fan2025_8}. Sistemas como los flujos de trabajo automatizados, la verificación de firmas digitales y las bases de datos centralizadas constituyen la columna vertebral de la infraestructura académica moderna.
 
 \begin{figure}[htbp]
 \centering
-% Replace example-image with your actual image file path
+% Reemplace example-image con la ruta real de su archivo de imagen
 \includegraphics[width=0.85\linewidth]{example-image}
-\caption{Conceptual Architecture of Digitalized Talent Management and Quality Assurance in Higher Education Institutions.}
+\caption{Arquitectura conceptual de la gestión digitalizada del talento y la garantía de calidad en Instituciones de Educación Superior.}
 \label{fig:background_arch}
 \end{figure}
 
-\subsection{Competency Frameworks and Media Literacy}
-The transition toward digitalized learning environments demands clear competency indicators for academic staff. Competency models in the digital age evaluate pedagogical skills alongside technological adaptability and data literacy \cite{ji2025_17}. Furthermore, integrating media education technologies into continuous professional training enables educators to utilize advanced digital communication tools effectively \cite{gorbatkova2023_15}.
+\subsection{Marcos de Competencias y Alfabetización Mediática}
+La transición hacia entornos de aprendizaje digitalizados exige indicadores de competencia claros para el personal académico. Los modelos de competencias en la era digital evalúan las habilidades pedagógicas junto con la adaptabilidad tecnológica y la alfabetización de datos \cite{ji2025_17}. Además, la integración de tecnologías de educación en medios dentro de la formación profesional continua permite a los educadores utilizar eficazmente herramientas avanzadas de comunicación digital \cite{gorbatkova2023_15}.
 
 \section{Indicadores Clave de Desempeño (KPI)}
 \label{sec:kpi}
