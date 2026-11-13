@@ -10,6 +10,8 @@
 \usepackage{xcolor}
 \usepackage{url}
 
+\usepackage{tabularx}
+\usepackage{multirow}
 % \documentclass[cameraready]{ieeeconf}
 
 \usepackage{bm}
@@ -138,6 +140,67 @@ La optimización se evalúa sobre cinco indicadores, definidos antes de la imple
 \end{table}
 
 K1 (Lead Time de Contratación) es el indicador agregado del proceso completo. K2 (Tasa de Idoneidad del Perfil) se calcula sobre el total de contratos formalizados por convocatoria. K3 (Costo Administrativo por Contratación) permite comparar el proceso manual contra el automatizado y justificar económicamente la inversión. K4 (Índice de Digitalización de Expedientes) mide el avance real de la transformación. K5 (Tasa de Rotación Temprana) es un indicador de resultado tardío pero crítico: conecta la calidad del proceso de contratación con la continuidad del servicio académico.
+
+\section{Metodología}
+
+Para garantizar el rigor metodológico, la transparencia y la reproducibilidad del estudio, la presente revisión sistemática de la literatura se condujo siguiendo las directrices de la declaración \textbf{PRISMA 2020} (\textit{Preferred Reporting Items for Systematic Reviews and Meta-Analyses}). El protocolo se estructuró para responder de manera sistemática a la pregunta de investigación formulada bajo el enfoque PICO, evaluando el impacto de la automatización, la inteligencia artificial y los sistemas digitales en la gestión del talento humano docente dentro de las Instituciones de Educación Superior (IES) públicas.
+
+\subsection{Fuentes de Información y Estrategia de Búsqueda}
+La recolección de evidencia científica se efectuó mediante una búsqueda sistemática en dos repositorios académicos complementarios: \textbf{Scopus}, seleccionada por su cobertura multidisciplinaria de literatura arbitrada de alto impacto, y \textbf{Google Scholar}, incorporada para capturar producción científica regional e hispanohablante vinculada a la administración universitaria pública.
+
+Las cadenas de búsqueda combinaron descriptores normalizados y términos clave en inglés y español mediante operadores booleanos (\texttt{AND}, \texttt{OR}), articulando cuatro ejes conceptuales:
+\begin{enumerate}
+    \item \textbf{Gestión del talento y contratación docente:} \textit{``faculty recruitment''}, \textit{``academic talent management''}, \textit{``faculty staffing''}, \textit{``contratación docente''}.
+    \item \textbf{Tecnologías de automatización e IA:} \textit{``ERP''}, \textit{``ATS''}, \textit{``workflow automation''}, \textit{``digital signature''}, \textit{``E-HRM''}, \textit{``artificial intelligence''}.
+    \item \textbf{Aseguramiento de la calidad y métricas:} \textit{``TQM''}, \textit{``ISO 9001''}, \textit{``PDCA''}, \textit{``KPI''}, \textit{``organizational sustainability''}.
+    \item \textbf{Contexto institucional:} \textit{``higher education institutions''}, \textit{``public universities''}, \textit{``universidades públicas''}.
+\end{enumerate}
+
+La ventana temporal de búsqueda se delimitó a publicaciones comprendidas entre \textbf{2018 y 2026}, aplicando el filtro de disponibilidad de acceso abierto (\textit{Open Access}) para asegurar la trazabilidad íntegra del corpus analizado.
+
+\subsection{Criterios de Elegibilidad}
+Con el propósito de asegurar la pertinencia temática y metodológica de los estudios analizados, se definieron criterios explícitos de inclusión y exclusión previo al proceso de cribado (Tabla~\ref{tab:criterios_elegibilidad}). Para ser incorporado en la síntesis final, cada documento debía satisfacer simultáneamente todos los criterios de inclusión y no incurrir en ninguna causal de descarte.
+
+\begin{table*}[htbp]
+\caption{Criterios de Inclusión y Exclusión Aplicados en la Revisión Sistemática}
+\label{tab:criterios_elegibilidad}
+\centering
+\renewcommand{\arraystretch}{1.25}
+\begin{tabularx}{\textwidth}{>{\bfseries}p{2.8cm} X X}
+\toprule
+\textbf{Dimensión} & \textbf{Criterios de Inclusión (Cumplimiento obligatorio)} & \textbf{Criterios de Exclusión (Descarte inmediato)} \\
+\midrule
+Ámbito Institucional & Estudios enfocados en Instituciones de Educación Superior (IES), facultades o universidades públicas. & Investigaciones centradas exclusivamente en empresas privadas, educación básica/media o entornos clínicos sin gestión académica. \\
+\midrule
+Temática Central & Abordaje directo de la gestión de talento docente, reclutamiento, selección, contratación, \textit{onboarding}, asignación académica o retención. & Estudios generales sobre educación o recursos humanos sin enfoque en la optimización de procesos del personal académico. \\
+\midrule
+Componente Tecnológico & Uso, evaluación o propuesta de automatización, sistemas ERP/E-HRM, ATS, flujos de trabajo (\textit{workflows}), minería de datos, IA o firma digital. & Ensayos puramente teóricos, descriptivos o cualitativos que carecen de componente digital o automatización de procesos. \\
+\midrule
+Calidad y Métricas & Aplicación o referencia a marcos de gobernanza, mejora continua (TQM, ISO 9001, PDCA), sostenibilidad organizacional u optimización de indicadores (KPIs). & Ausencia de métricas de desempeño, modelos de evaluación estructural o impacto operativo verificable. \\
+\midrule
+Período, Idioma y Acceso & Artículos científicos y ponencias publicadas entre \textbf{2018 y 2026}, redactados en \textbf{español o inglés}, con acceso a texto completo (\textit{Open Access}). & Registros duplicados entre bases de datos, fe de erratas (\textit{corrections}), idiomas distintos al español/inglés o literatura gris no arbitrada. \\
+\bottomrule
+\end{tabularx}
+\end{table*}
+
+\subsection{Proceso de Selección y Evaluación Distribuida}
+Tras ejecutar la ecuación de búsqueda y consolidar los metadatos bibliográficos en una matriz centralizada, se aplicó un protocolo de evaluación distribuida en dos etapas secuenciales entre los miembros del equipo investigador:
+
+\begin{itemize}
+    \item \textbf{Fase 1 -- Identificación y Cribado (\textit{Screening}):} Se depuraron los registros duplicados y se verificó la disponibilidad de texto completo. Posteriormente, cada revisor evaluó de forma estructurada el título, las palabras clave y el resumen (\textit{abstract}) de los artículos asignados frente a los criterios de elegibilidad, descartando aquellos pertenecientes a sectores no afines (e.g., protocolos médicos o deportivos sin relación con la gestión docente) o sin componente tecnológico.
+    \item \textbf{Fase 2 -- Elegibilidad e Inclusión:} Los estudios preseleccionados en el cribado fueron sometidos a lectura crítica a texto completo para verificar su rigor metodológico y su aporte específico a los módulos del ciclo de vida de contratación docente (ATS, \textit{Workflows}, \textit{Onboarding}, Automatización/IA y KPIs/TQM). Los artículos que superaron esta fase conformaron el corpus definitivo aprobado para la extracción de datos y síntesis cualitativa.
+\end{itemize}
+
+\subsection{Consolidación del Corpus y Cobertura Temática}
+La búsqueda inicial permitió identificar un total de \textbf{93 registros} en Scopus (complementados con \textbf{27 registros} adicionales rastreados en Google Scholar). Tras aplicar el filtro de acceso abierto (\textbf{42 registros} elegibles en Scopus en la base bibliográfica consolidada) y ejecutar el cribado por título, resumen y lectura crítica a texto completo frente a los criterios PICO, se depuraron los estudios fuera de alcance y se consolidó el corpus final aprobado por el equipo investigador.
+
+Para asegurar una cobertura integral de la pregunta PICO, los estudios aprobados en el corpus bibliográfico fueron clasificados en cuatro ejes analíticos interconectados:
+\begin{enumerate}
+    \item \textbf{Arquitecturas de Gestión del Talento y E-HRM en IES:} Estudios que analizan la eficacia de los procesos de reclutamiento, políticas de recursos humanos, retención docente, sostenibilidad organizacional y mediación de la confianza en entornos universitarios \cite{shrivastava2022_0, vezou2026_18, sadagheyani2021_26, li2025_28, bj2022_34, abbas2022_42, zongyu2024_57, mahade2025_58, musakuro2022_71, liechti2026_72, hussein2024_77, sadeghian2021_80, ebrahim2025_81}.
+    \item \textbf{Automatización, IA y Asignación Académica:} Investigaciones centradas en la incorporación de inteligencia artificial, aprendizaje profundo (\textit{deep learning}), minería de datos, reclutamiento digital y estandarización de la afinidad docente-curso \cite{fan2025_8, michael2024_22, zhou2023_31, coronel2024_39, nain2026_47, johar2024_65}.
+    \item \textbf{Perfiles por Competencias, Alfabetización Digital e Inducción (\textit{Onboarding}):} Trabajos que definen indicadores de competencia docente en la era digital, Educación 4.0, tecnologías mediáticas e integración de nuevo profesorado \cite{gorbatkova2023_15, ji2025_17, dejene2022_23, ram2021_27, vedhathiri2021_37}.
+    \item \textbf{Gobernanza, Internacionalización e Infraestructura Digital:} Estudios que abordan la transformación digital institucional, liderazgo orientado al conocimiento y estrategias de internacionalización universitaria \cite{mahsusi2024_29, ononye2024_43, soquiat2026_52, fahmy2025_56}.
+\end{enumerate}
 
 \bibliographystyle{IEEEtran}
 \bibliography{../assets/bibliography/REFERENCES_ALPHA}
