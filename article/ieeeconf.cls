@@ -1,232 +1,208 @@
-%%
-%% This is file `IEEEconf.cls',
-%% generated with the docstrip utility.
-%%
-%% The original source files were:
-%%
-%% IEEEconf.dtx  (with options: `class')
-%% 
-%% This is a generated file.
-%% 
-%% Copyright (C) 2009 by Scott Pakin <scott+iecnf@pakin.org>
-%% 
-%% This file may be distributed and/or modified under the conditions of
-%% the LaTeX Project Public License, either version 1.3c of this license
-%% or (at your option) any later version.  The latest version of this
-%% license is in:
-%% 
-%%    http://www.latex-project.org/lppl.txt
-%% 
-%% and version 1.3c or later is part of all distributions of LaTeX version
-%% 2006/05/20 or later.
-%% 
-\NeedsTeXFormat{LaTeX2e}[1999/12/01]
-\ProvidesClass{IEEEconf}
-    [2009/04/05 v1.4 IEEE Computer Society 8.5x11" conference proceedings]
-\def\ieee@column@spec{twocolumn}
-\DeclareOption{onecolumn}{\def\ieee@column@spec{onecolumn}}
-\newif\if@ieee@correct@geometry@
-\@ieee@correct@geometry@true
-\DeclareOption{latex8}{\@ieee@correct@geometry@false}
-\DeclareOption*{\PassOptionsToClass{\CurrentOption}{article}}
-\ProcessOptions\relax
-\PassOptionsToClass{\ieee@column@spec,10pt}{article}
-\LoadClass{article}
-\let\ieee@old@maketitle=\maketitle
-\renewcommand{\maketitle}{%
-  \ieee@old@maketitle
-  \thispagestyle{empty}%
+% Main article — IEEE Conference format
+% Requires ieeeconf.cls (see template.tex in the repository root).
+
+\documentclass[conference]{IEEEtran}
+\usepackage{cite}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{algorithmic}
+\usepackage{graphicx}
+\usepackage{textcomp}
+\usepackage{xcolor}
+\usepackage{url}
+
+\usepackage{tabularx}
+\usepackage{multirow}
+% \documentclass[cameraready]{ieeeconf}
+
+\usepackage{bm}
+\usepackage{siunitx}
+\robustify\bfseries
+\usepackage{booktabs}
+\usepackage[capitalize,nameinlink]{cleveref}
+\crefname{equation}{}{}
+\Crefname{equation}{Ecuación}{Ecuaciones}
+
+\newcommand{\RR}{\mathbb{R}}
+
+\title{Optimización del Proceso de Gestión de Talento Humano Docente: Automatización del Ciclo de Vida de Contratación en Universidades Públicas}
+
+
+\author{
+    \IEEEauthorblockN{
+        Anthony Moises Condori Choccata\IEEEauthorrefmark{1},\\
+        Angel Julio Retamozo Calatayud\IEEEauthorrefmark{1},\\
+        Daniel Adriano Gonzales Trelles\IEEEauthorrefmark{1} \\
+        Randal Steve Mejia Chuctaya\IEEEauthorrefmark{1}\\
+    }
+    \IEEEauthorblockA{\IEEEauthorrefmark{1}Universidad Nacional de San Agustín de Arequipa, Arequipa, Perú}
 }
-\pagestyle{empty}
-\setlength{\parindent}{0.25in}
-\if@ieee@correct@geometry@
-  \RequirePackage[%
-    noheadfoot,
-    textwidth=6.5in,
-    textheight=8.875in,
-    tmargin=1in
-  ]{geometry}
-  \setlength{\columnsep}{0.375in}
-\else
-  \setlength{\textheight}{8.875in}
-  \setlength{\textwidth}{6.875in}
-  \setlength{\columnsep}{0.3125in}
-  \setlength{\topmargin}{0in}
-  \setlength{\headheight}{0in}
-  \setlength{\headsep}{0in}
-  \setlength{\parindent}{1pc}
-  \setlength{\oddsidemargin}{-.304in}
-  \setlength{\evensidemargin}{-.304in}
-\fi
-\RequirePackage{mathptmx}
-\RequirePackage{helvet}
-\RequirePackage{courier}
-\newcommand{\ieee@times@xiv@bold}{%
-  \rmfamily\bfseries\upshape\fontsize{14}{16}\selectfont}
-\newcommand{\ieee@times@xii@bold}{%
-  \rmfamily\bfseries\upshape\fontsize{12}{14}\selectfont}
-\newcommand{\ieee@times@xi@bold}{%
-  \rmfamily\bfseries\upshape\fontsize{11}{13}\selectfont}
-\newcommand{\ieee@times@x@bold}{%
-  \rmfamily\bfseries\upshape\fontsize{10}{12}\selectfont}
-\newcommand{\ieee@times@xii@roman}{%
-  \rmfamily\mdseries\upshape\fontsize{12}{14}\selectfont}
-\newcommand{\ieee@times@xii@italic}{%
-  \rmfamily\mdseries\itshape\fontsize{12}{14}\selectfont}
-\newcommand{\ieee@times@ix@roman}{%
-  \rmfamily\mdseries\upshape\fontsize{9}{11}\selectfont}
-\newcommand{\ieee@helv@ix@roman}{%
-  \sffamily\mdseries\upshape\fontsize{9}{11}\selectfont}
-\newcommand{\ieee@helv@x@bold}{%
-  \sffamily\bfseries\upshape\fontsize{10}{12}\selectfont}
-\RequirePackage{array}
-\newlength{\ieee@author@width}
-\def\and{%
-  \end{tabular}%
-  \hskip 1em \@plus 0.17fil%
-  \rule{0pt}{1.5\baselineskip}%
-  \begin{tabular}[t]{@{}>{\centering}p{\ieee@author@width}@{}}%
-}
-\def\@maketitle{%
-  \newpage
-  \null
-  \vskip 0.375in%
-  \begin{center}%
-    \let\footnote=\thanks
-    {\ieee@times@xiv@bold\@title\par}%
-    \vskip 24pt
-    \ieee@times@xii@roman
-    \settowidth{\ieee@author@width}{%
-      \let\and=\crcr
-      \let\thanks=\@gobble
-      \let\footnote=\@gobble
-      \begin{tabular}[t]{@{}c@{}}%
-        \@author
-      \end{tabular}%
-    }%
-    \begin{tabular}[t]{@{}>{\hfil}p{\ieee@author@width}<{\hfil}@{}}%
-      \@author
-    \end{tabular}%
-  \end{center}%
-  \if@ieee@correct@geometry@
-    \vskip -\baselineskip
-    \vskip 24pt%
-  \else
-    \vspace*{0.5em}%
-    \vspace*{12pt}%
-  \fi
-}
-\newenvironment{affiliation}{%
-  \ieee@times@xii@italic
-  \if@ieee@correct@geometry@
-  \else
-    \rule[10pt]{0pt}{0.5em}%
-  \fi
-  \begin{tabular}[t]{c}%
-}{%
-  \end{tabular}%
-}
-\newcommand*{\email}[1]{%
-  {\ieee@times@xii@italic#1}}
-\if@titlepage
-  \renewenvironment{abstract}{%
-      \titlepage
-      \null\vfil
-      \@beginparpenalty\@lowpenalty
-      \begin{center}%
-        \bfseries \abstractname
-        \@endparpenalty\@M
-      \end{center}%
-      \par}%
-     {\par\vfil\null\endtitlepage}
-\else
-  \renewenvironment{abstract}{%
-      \begin{center}%
-        \ieee@times@xii@bold \abstractname
-      \end{center}%
-      \par
-      \itshape}%
-      {\vspace*{\baselineskip}}%
-\fi
-\long\def\@makecaption#1#2{%
-  \vskip\abovecaptionskip
-  \sbox\@tempboxa{\ieee@helv@x@bold #1. #2}%
-  \ifdim \wd\@tempboxa >\hsize
-    \ieee@helv@x@bold #1. #2\par
-  \else
-    \global \@minipagefalse
-    \hb@xt@\hsize{\hfil\box\@tempboxa\hfil}%
-  \fi
-  \vskip\belowcaptionskip}
-\DeclareRobustCommand{\callout}[1]{%
-  {\ieee@helv@ix@roman#1}%
-}
-\RequirePackage{titlesec}
-\titleformat{\section}{\ieee@times@xii@bold}{\thesection.}{0.5em}%
-  {}\relax
-\titlespacing{\section}{0pt}{12pt}{12pt}
-\titleformat{\subsection}{\ieee@times@xi@bold}{\thesubsection.}%
-  {0.5em}{}\relax
-\titlespacing{\subsection}{0pt}{11pt}{11pt}
-\titleformat{\subsubsection}[runin]{\ieee@times@x@bold}%
-  {\thesubsubsection.}{0.5em}{}[.]
-\titlespacing{\subsubsection}{0pt}{10pt}{0.5em}
-\renewenvironment{thebibliography}[1]{%
-  \section*{\refname}%
-  \@mkboth{\MakeUppercase\refname}{\MakeUppercase\refname}%
-  \begin{ieee@thebibitemlist}{#1}%
-}{%
-  \end{ieee@thebibitemlist}%
-}
-\newenvironment{ieee@thebibitemlist}[1]
-     {\list{\@biblabel{\@arabic\c@enumiv}}%
-           {\ieee@times@ix@roman
-            \setlength{\itemsep}{0pt}%
-            \setlength{\parsep}{0pt}%
-            \settowidth\labelwidth{\@biblabel{#1}}%
-            \leftmargin\labelwidth
-            \advance\leftmargin\labelsep
-            \@openbib@code
-            \usecounter{enumiv}%
-            \let\p@enumiv\@empty
-            \renewcommand\theenumiv{\@arabic\c@enumiv}%
-            \extrareflistcode}%
-      \sloppy
-      \clubpenalty4000
-      \@clubpenalty \clubpenalty
-      \widowpenalty4000%
-      \sfcode`\.\@m}
-     {\def\@noitemerr
-       {\@latex@warning{Empty `thebibliography' environment}}%
-      \endlist}
-\AtBeginDocument{%
-  \@ifpackageloaded{tocbibind}{%
-    \let\thebibitemlist=\ieee@thebibitemlist
-    \let\endthebibitemlist=\endieee@thebibitemlist
-  }%
-  {}%
-}
-\newcommand{\ieee@pre@bibitem@key}{IEEEconf}
-\newcommand{\ieee@pre@bibitem@cmd}{}
-\newcommand{\dobeforekey}[2]{%
-  \def\ieee@pre@bibitem@key{#1}%
-  \def\ieee@pre@bibitem@cmd{#2}%
-}
-\let\ieee@old@bibitem=\bibitem
-\renewcommand{\bibitem}[2][]{%
-  \def\ieee@biblabel{#1}%
-  \def\ieee@bibkey{#2}%
-  \ifx\ieee@bibkey\ieee@pre@bibitem@key
-    \ieee@pre@bibitem@cmd
-  \fi
-  \ifx\ieee@biblabel\@empty
-    \def\next{\ieee@old@bibitem{#2}}%
-  \else
-    \def\next{\ieee@old@bibitem[#1]{#2}}%
-  \fi
-  \next
-}
-\newcommand{\extrareflistcode}{}
-\endinput
-%%
-%% End of file `IEEEconf.cls'.
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+The rapid digital transformation of Higher Education Institutions (HEIs) necessitates structural modernization across human resource management, faculty staffing, and administrative workflows. This paper examines contemporary frameworks for academic talent management, evaluating the integration of automated solutions, competency frameworks, and media-driven technological platforms in modern university administration.
+\end{abstract}
+
+\begin{IEEEkeywords}
+Selección por competencias, Perfiles docentes, Reclutamiento digital,Evaluación de idoneidad, onboarding docente.
+\end{IEEEkeywords}
+
+\section{Introducción}
+\label{sec:intro}
+
+El panorama operativo de las Instituciones de Educación Superior (IES) está experimentando una profunda transición estructural impulsada por la competencia académica globalizada y la evolución tecnológica. A medida que las universidades expanden su alcance administrativo y educativo, la contratación, integración y retención de personal académico cualificado se han convertido en imperativos estratégicos vitales. Las metodologías administrativas tradicionales a menudo no logran abordar las complejidades de la asignación docente moderna, lo que requiere sistemas dinámicos capaces de coordinar eficazmente los recursos humanos académicos.
+
+La Gestión de Recursos Humanos (GRH) en el sector de la educación superior enfrenta desafíos específicos en comparación con los entornos corporativos. Las dobles obligaciones de excelencia pedagógica e investigación de alto impacto exigen que la administración universitaria establezca mecanismos integrales de evaluación e incorporación (*onboarding*). Sin marcos estructurados, las instituciones académicas sufren ineficiencias en la contratación, asignación docente subóptima y altas tasas de rotación, lo que en última instancia perjudica el rendimiento y la reputación institucional.
+
+La digitalización desempeña un papel fundamental para superar estos cuellos de botella organizacionales. La implementación de plataformas digitales modernas, sistemas de Planificación de Recursos Empresariales (ERP) y Sistemas de Seguimiento de Candidatos (ATS) automatizados permite una comunicación fluida y un seguimiento administrativo eficiente entre las facultades universitarias. Los entornos administrativos integrados digitalmente facilitan la evaluación sistemática de las competencias de los candidatos al tiempo que reducen la carga administrativa general.
+
+Asimismo, las estrategias de internacionalización han introducido nuevas dimensiones en la contratación docente. Las IES modernas reclutan activamente talento académico global para impulsar la producción científica y elevar su posición en los índices de clasificación internacional. Sin embargo, atraer miembros del profesorado internacional requiere una infraestructura institucional sólida, ya que el proceso de integración está fuertemente mediatizado por el nivel general de digitalización operativa y administrativa de la institución \cite{fan2025_8}.
+
+En paralelo, los perfiles y las competencias clave que se esperan de los educadores universitarios están cambiando rápidamente en respuesta a la era digital. Las metodologías pedagógicas incorporan cada vez más herramientas digitales especializadas y formatos de medios interactivos, lo que requiere capacitación y desarrollo profesional continuo. Por consiguiente, los modelos de evaluación institucional deben adaptarse para valorar tanto las competencias académicas tradicionales como los indicadores de alfabetización digital \cite{ji2025_17}.
+
+La formación profesional continua y el despliegue de tecnologías educativas basadas en medios son críticos para preparar a los educadores en la navegación de entornos de aprendizaje complejos \cite{gorbatkova2023_15}. La integración de herramientas tecnológicas modernas en los programas de desarrollo docente mejora la efectividad pedagógica y alinea los resultados académicos con los estándares industriales y las demandas sociales actuales.
+
+A pesar de estos avances tecnológicos, muchas IES luchan por poner en marcha marcos holísticos de gestión del talento que integren sin problemas la contratación, la retención y la evaluación del desempeño. El desarrollo de marcos estructurados y específicos para el sector es esencial para alinear los procesos administrativos de RR. HH. con los objetivos institucionales globales y las métricas de garantía de calidad \cite{musakuro2022_71}.
+
+Esta revisión proporciona un análisis exhaustivo de los enfoques contemporáneos en la gestión del talento académico. Al analizar la intersección entre digitalización institucional, marcos de competencias, tecnologías mediáticas y arquitecturas de gestión del talento, este estudio delinea pautas de acción prácticas para optimizar los flujos de trabajo de RR. HH. en entornos modernos de educación superior.
+
+\section{Antecedentes}
+
+Para contextualizar adecuadamente la aplicación de plataformas digitales y la gestión de la calidad en los flujos de trabajo de RR. HH. en la educación superior, es necesario establecer varios conceptos fundamentales y marcos teóricos. Esta sección describe los principios centrales que rigen la gestión del talento, la madurez digital en el ámbito académico y la evaluación de competencias.
+
+\subsection{Pregunta de Investigación Formulada}
+\label{sec:pico}
+
+Con el fin de delimitar el alcance del estudio, la pregunta de investigación se estructura mediante la estrategia PICO: ¿cómo influyen la inteligencia artificial, la automatización y la digitalización del ciclo de vida de contratación en la eficiencia operativa, el tiempo de contratación, la mitigación de sesgos y la eliminación de barreras organizacionales dentro de la Gestión del Talento Humano de las Instituciones de Educación Superior Públicas? La \cref{tab:pico} detalla cada uno de sus componentes.
+
+\begin{table}[t]
+\centering
+\caption{Formulación de la pregunta de investigación mediante la estrategia PICO.}
+\label{tab:pico}
+\begin{tabular}{p{1.6cm}p{2.7cm}p{3.9cm}}
+    \toprule
+    \textbf{Elemento} & \textbf{Pregunta} & \textbf{Descripción} \\
+    \midrule
+    Población & ¿Quién es el objeto de estudio? & Gestión del Talento Humano en Instituciones de Educación Superior Públicas (Universidades). \\
+    \addlinespace
+    Intervención & ¿Cuál es el nuevo proceso o herramienta? & IA, automatización y digitalización del ciclo de vida de contratación y reclutamiento. \\
+    \addlinespace
+    Comparación & ¿Cuál es la alternativa? & Procesos de contratación manuales, flujos de trabajo burocráticos tradicionales o sistemas sin IA. \\
+    \addlinespace
+    Resultado & ¿Cuál es el resultado medido? & Eficiencia operativa, reducción del tiempo de contratación, mitigación de sesgos y eliminación de barreras organizacionales. \\
+    \bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{Arquitecturas de Gestión del Talento en las IES}
+La gestión del talento en la educación superior abarca la adquisición, el desarrollo y la retención estratégica del personal académico y administrativo. A diferencia de los modelos corporativos de RR. HH., las arquitecturas de talento universitario deben considerar los sistemas de titularidad (*tenure*), la libertad académica, la productividad científica y la efectividad docente. Los marcos estructurados proporcionan hojas de ruta operativas para la identificación del talento, la planificación de la sucesión y la gestión del rendimiento, asegurando la continuidad institucional y la competitividad \cite{musakuro2022_71}.
+
+\subsection{Digitalización Institucional e Integración Académica}
+La digitalización institucional se refiere al grado en que una organización integra las tecnologías digitales en sus flujos operativos, de comunicación y de gestión principales. En las IES, un alto nivel de digitalización agiliza los procedimientos administrativos, facilita la colaboración docente transfronteriza y reduce la fricción durante la integración del profesorado internacional \cite{fan2025_8}. Sistemas como los flujos de trabajo automatizados, la verificación de firmas digitales y las bases de datos centralizadas constituyen la columna vertebral de la infraestructura académica moderna.
+
+\begin{figure}[htbp]
+\centering
+
+\includegraphics[width=0.85\linewidth]{img/flujo.jpeg}
+\caption{Arquitectura conceptual de la gestión digitalizada del talento y la garantía de calidad en Instituciones de Educación Superior.}
+\label{fig:background_arch}
+\end{figure}
+
+\subsection{Marcos de Competencias y Alfabetización Mediática}
+La transición hacia entornos de aprendizaje digitalizados exige indicadores de competencia claros para el personal académico. Los modelos de competencias en la era digital evalúan las habilidades pedagógicas junto con la adaptabilidad tecnológica y la alfabetización de datos \cite{ji2025_17}. Además, la integración de tecnologías de educación en medios dentro de la formación profesional continua permite a los educadores utilizar eficazmente herramientas avanzadas de comunicación digital \cite{gorbatkova2023_15}.
+
+\section{Indicadores Clave de Desempeño (KPI)}
+\label{sec:kpi}
+
+La optimización se evalúa sobre cinco indicadores, definidos antes de la implementación y medidos de forma continua. La \cref{tab:kpi} resume su definición y la correspondencia con los módulos de automatización de \cref{sec:automatizacion}.
+
+\begin{table}[t]
+\centering
+\caption{Indicadores clave de desempeño: definición, unidad y módulo que actúa sobre cada uno.}
+\label{tab:kpi}
+\begin{tabular}{p{2.55cm}p{3.6cm}p{1.5cm}}
+    \toprule
+    \textbf{KPI} & \textbf{Definición} & \textbf{Módulo} \\
+    \midrule
+    Lead Time de Contratación & Días desde la detección de la vacante hasta firma del contrato y alta en el sistema & Workflow \\
+    \addlinespace
+    Tasa de Idoneidad del Perfil & \% de contratados que cumplen al 100\% los requisitos técnicos y académicos & Validación \\
+    \addlinespace
+    Costo Adm.\ por Contratación & Horas-hombre y recursos materiales invertidos en la selección de un docente & ATS \\
+    \addlinespace
+    Índice de Digitalización de Expedientes & \% de procesos gestionados íntegramente de forma digital vs.\ manual/papel & Workflows \\
+    \addlinespace
+    Tasa de Rotación Temprana & \% de docentes que abandonan antes del primer año por fallos de selección o inducción & Onboarding \\
+    \bottomrule
+\end{tabular}
+\end{table}
+
+K1 (Lead Time de Contratación) es el indicador agregado del proceso completo. K2 (Tasa de Idoneidad del Perfil) se calcula sobre el total de contratos formalizados por convocatoria. K3 (Costo Administrativo por Contratación) permite comparar el proceso manual contra el automatizado y justificar económicamente la inversión. K4 (Índice de Digitalización de Expedientes) mide el avance real de la transformación. K5 (Tasa de Rotación Temprana) es un indicador de resultado tardío pero crítico: conecta la calidad del proceso de contratación con la continuidad del servicio académico.
+
+\section{Metodología}
+
+Para garantizar el rigor metodológico, la transparencia y la reproducibilidad del estudio, la presente revisión sistemática de la literatura se condujo siguiendo las directrices de la declaración \textbf{PRISMA 2020} (\textit{Preferred Reporting Items for Systematic Reviews and Meta-Analyses}). El protocolo se estructuró para responder de manera sistemática a la pregunta de investigación formulada bajo el enfoque PICO, evaluando el impacto de la automatización, la inteligencia artificial y los sistemas digitales en la gestión del talento humano docente dentro de las Instituciones de Educación Superior (IES) públicas.
+
+\subsection{Fuentes de Información y Estrategia de Búsqueda}
+La recolección de evidencia científica se efectuó mediante una búsqueda sistemática en dos repositorios académicos complementarios: \textbf{Scopus}, seleccionada por su cobertura multidisciplinaria de literatura arbitrada de alto impacto, y \textbf{Google Scholar}, incorporada para capturar producción científica regional e hispanohablante vinculada a la administración universitaria pública.
+
+Las cadenas de búsqueda combinaron descriptores normalizados y términos clave en inglés y español mediante operadores booleanos (\texttt{AND}, \texttt{OR}), articulando cuatro ejes conceptuales:
+\begin{enumerate}
+    \item \textbf{Gestión del talento y contratación docente:} \textit{``faculty recruitment''}, \textit{``academic talent management''}, \textit{``faculty staffing''}, \textit{``contratación docente''}.
+    \item \textbf{Tecnologías de automatización e IA:} \textit{``ERP''}, \textit{``ATS''}, \textit{``workflow automation''}, \textit{``digital signature''}, \textit{``E-HRM''}, \textit{``artificial intelligence''}.
+    \item \textbf{Aseguramiento de la calidad y métricas:} \textit{``TQM''}, \textit{``ISO 9001''}, \textit{``PDCA''}, \textit{``KPI''}, \textit{``organizational sustainability''}.
+    \item \textbf{Contexto institucional:} \textit{``higher education institutions''}, \textit{``public universities''}, \textit{``universidades públicas''}.
+\end{enumerate}
+
+La ventana temporal de búsqueda se delimitó a publicaciones comprendidas entre \textbf{2018 y 2026}, aplicando el filtro de disponibilidad de acceso abierto (\textit{Open Access}) para asegurar la trazabilidad íntegra del corpus analizado.
+
+\subsection{Criterios de Elegibilidad}
+Con el propósito de asegurar la pertinencia temática y metodológica de los estudios analizados, se definieron criterios explícitos de inclusión y exclusión previo al proceso de cribado (Tabla~\ref{tab:criterios_elegibilidad}). Para ser incorporado en la síntesis final, cada documento debía satisfacer simultáneamente todos los criterios de inclusión y no incurrir en ninguna causal de descarte.
+
+\begin{table*}[htbp]
+\caption{Criterios de Inclusión y Exclusión Aplicados en la Revisión Sistemática}
+\label{tab:criterios_elegibilidad}
+\centering
+\renewcommand{\arraystretch}{1.25}
+\begin{tabularx}{\textwidth}{>{\bfseries}p{2.8cm} X X}
+\toprule
+\textbf{Dimensión} & \textbf{Criterios de Inclusión (Cumplimiento obligatorio)} & \textbf{Criterios de Exclusión (Descarte inmediato)} \\
+\midrule
+Ámbito Institucional & Estudios enfocados en Instituciones de Educación Superior (IES), facultades o universidades públicas. & Investigaciones centradas exclusivamente en empresas privadas, educación básica/media o entornos clínicos sin gestión académica. \\
+\midrule
+Temática Central & Abordaje directo de la gestión de talento docente, reclutamiento, selección, contratación, \textit{onboarding}, asignación académica o retención. & Estudios generales sobre educación o recursos humanos sin enfoque en la optimización de procesos del personal académico. \\
+\midrule
+Componente Tecnológico & Uso, evaluación o propuesta de automatización, sistemas ERP/E-HRM, ATS, flujos de trabajo (\textit{workflows}), minería de datos, IA o firma digital. & Ensayos puramente teóricos, descriptivos o cualitativos que carecen de componente digital o automatización de procesos. \\
+\midrule
+Calidad y Métricas & Aplicación o referencia a marcos de gobernanza, mejora continua (TQM, ISO 9001, PDCA), sostenibilidad organizacional u optimización de indicadores (KPIs). & Ausencia de métricas de desempeño, modelos de evaluación estructural o impacto operativo verificable. \\
+\midrule
+Período, Idioma y Acceso & Artículos científicos y ponencias publicadas entre \textbf{2018 y 2026}, redactados en \textbf{español o inglés}, con acceso a texto completo (\textit{Open Access}). & Registros duplicados entre bases de datos, fe de erratas (\textit{corrections}), idiomas distintos al español/inglés o literatura gris no arbitrada. \\
+\bottomrule
+\end{tabularx}
+\end{table*}
+
+\subsection{Proceso de Selección y Evaluación Distribuida}
+Tras ejecutar la ecuación de búsqueda y consolidar los metadatos bibliográficos en una matriz centralizada, se aplicó un protocolo de evaluación distribuida en dos etapas secuenciales entre los miembros del equipo investigador:
+
+\begin{itemize}
+    \item \textbf{Fase 1 -- Identificación y Cribado (\textit{Screening}):} Se depuraron los registros duplicados y se verificó la disponibilidad de texto completo. Posteriormente, cada revisor evaluó de forma estructurada el título, las palabras clave y el resumen (\textit{abstract}) de los artículos asignados frente a los criterios de elegibilidad, descartando aquellos pertenecientes a sectores no afines (e.g., protocolos médicos o deportivos sin relación con la gestión docente) o sin componente tecnológico.
+    \item \textbf{Fase 2 -- Elegibilidad e Inclusión:} Los estudios preseleccionados en el cribado fueron sometidos a lectura crítica a texto completo para verificar su rigor metodológico y su aporte específico a los módulos del ciclo de vida de contratación docente (ATS, \textit{Workflows}, \textit{Onboarding}, Automatización/IA y KPIs/TQM). Los artículos que superaron esta fase conformaron el corpus definitivo aprobado para la extracción de datos y síntesis cualitativa.
+\end{itemize}
+
+\subsection{Consolidación del Corpus y Cobertura Temática}
+La búsqueda inicial permitió identificar un total de \textbf{93 registros} en Scopus (complementados con \textbf{27 registros} adicionales rastreados en Google Scholar). Tras aplicar el filtro de acceso abierto (\textbf{42 registros} elegibles en Scopus en la base bibliográfica consolidada) y ejecutar el cribado por título, resumen y lectura crítica a texto completo frente a los criterios PICO, se depuraron los estudios fuera de alcance y se consolidó el corpus final aprobado por el equipo investigador.
+
+Para asegurar una cobertura integral de la pregunta PICO, los estudios aprobados en el corpus bibliográfico fueron clasificados en cuatro ejes analíticos interconectados:
+\begin{enumerate}
+    \item \textbf{Arquitecturas de Gestión del Talento y E-HRM en IES:} Estudios que analizan la eficacia de los procesos de reclutamiento, políticas de recursos humanos, retención docente, sostenibilidad organizacional y mediación de la confianza en entornos universitarios \cite{shrivastava2022_0, vezou2026_18, sadagheyani2021_26, li2025_28, bj2022_34, abbas2022_42, zongyu2024_57, mahade2025_58, musakuro2022_71, liechti2026_72, hussein2024_77, sadeghian2021_80, ebrahim2025_81}.
+    \item \textbf{Automatización, IA y Asignación Académica:} Investigaciones centradas en la incorporación de inteligencia artificial, aprendizaje profundo (\textit{deep learning}), minería de datos, reclutamiento digital y estandarización de la afinidad docente-curso \cite{fan2025_8, michael2024_22, zhou2023_31, coronel2024_39, nain2026_47, johar2024_65}.
+    \item \textbf{Perfiles por Competencias, Alfabetización Digital e Inducción (\textit{Onboarding}):} Trabajos que definen indicadores de competencia docente en la era digital, Educación 4.0, tecnologías mediáticas e integración de nuevo profesorado \cite{gorbatkova2023_15, ji2025_17, dejene2022_23, ram2021_27, vedhathiri2021_37}.
+    \item \textbf{Gobernanza, Internacionalización e Infraestructura Digital:} Estudios que abordan la transformación digital institucional, liderazgo orientado al conocimiento y estrategias de internacionalización universitaria \cite{mahsusi2024_29, ononye2024_43, soquiat2026_52, fahmy2025_56}.
+\end{enumerate}
+
+\bibliographystyle{IEEEtran}
+\bibliography{../assets/bibliography/REFERENCES_ALPHA}
+
+\end{document}
